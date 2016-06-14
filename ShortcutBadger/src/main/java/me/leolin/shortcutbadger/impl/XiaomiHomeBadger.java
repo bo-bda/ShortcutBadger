@@ -29,7 +29,7 @@ public class XiaomiHomeBadger implements Badger {
             Object miuiNotification = miuiNotificationClass.newInstance();
             Field field = miuiNotification.getClass().getDeclaredField("messageCount");
             field.setAccessible(true);
-            field.set(miuiNotification, String.valueOf(badgeCount == 0 ? "" : badgeCount));
+            field.set(miuiNotification, badgeCount);
         } catch (Exception e) {
             Intent localIntent = new Intent(
                     INTENT_ACTION);
